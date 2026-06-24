@@ -321,6 +321,16 @@ with tab1:
             height=150, key="tunggal"
         )
 
+        # Opsional: isi metadata manual
+        with st.expander("Isi metadata tweet (opsional)"):
+            meta_tanggal  = st.text_input("Tanggal tweet", placeholder="cth: Wed Jun 10 06:28:21 +0000 2026")
+            meta_like     = st.number_input("Jumlah Like",    min_value=0, value=0)
+            meta_rt       = st.number_input("Jumlah Retweet", min_value=0, value=0)
+            meta_reply    = st.number_input("Jumlah Reply",   min_value=0, value=0)
+            meta_url      = st.text_input("URL Tweet (opsional)", placeholder="https://x.com/...")
+
+        run = st.button("Jalankan Analisis", type="primary", disabled=not model_loaded)
+
     with col_out:
         st.markdown("""
         <div class="section-title">
